@@ -19,12 +19,20 @@ const PostEdit = ({post,showForm, allData}) => {
     }
     const updateClick = (e)=>{
         e.preventDefault();
+        if(postData.title.toString().trim()===""){
+            alert("Enter the title first !");
+            return;
+        }
         dispatch(updatePost(postData,postData.id));
         showForm(false);
     }
 
     const titleLostFocus = (e, val)=>{
         e.preventDefault();
+        if(val.toString().trim()===""){
+            alert("Enter the title first !");
+            return;
+        }
         const filteredPosts = allData.posts.filter(record => record.title === val);
         setPostData(...filteredPosts);
     }
