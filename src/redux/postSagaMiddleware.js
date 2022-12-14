@@ -13,16 +13,8 @@ export function* getPosts() {
     }
 }
 
-
-// function* searchPosts(data) {
-//     let result = yield axios.get(`/searchpost?title=${data.query}`);
-//     console.log("get in saga search ---> ",result.data);
-//     yield put({type: GET_ALL_POST, data:result.data})
-// }
-
 function* postSagaMiddleware() {
     yield takeEvery(POST_LIST, getPosts)
-    // yield takeEvery(SEARCH_POST, searchPosts)
 }
 
 export default postSagaMiddleware;
