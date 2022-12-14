@@ -66,7 +66,6 @@ const postRoutes = (app, fs) => {
     app.put('/updatepost/:id', (req, res)=>{
         readFile((data) => {
             const postId = req.params['id'];
-            console.log("Body ---> ",req.body);
             let newData = data.posts.map((val)=>{
                 if(val.id == postId){
                     val = req.body;
