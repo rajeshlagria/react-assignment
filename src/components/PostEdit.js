@@ -5,7 +5,6 @@ import './postedit.css';
 
 const PostEdit = ({post,showForm, allData}) => {
 
-    console.log("props -->",post);
     const dispatch = useDispatch();
 
     const [postData, setPostData] = useState({
@@ -16,21 +15,17 @@ const PostEdit = ({post,showForm, allData}) => {
     });
 
     const cancelClick = (e)=>{
-            console.log("Cancel clicked");
             showForm(false);
     }
     const updateClick = (e)=>{
         e.preventDefault();
         dispatch(updatePost(postData,postData.id));
-        console.log("update clicked", postData);
         showForm(false);
     }
 
     const titleLostFocus = (e, val)=>{
-        console.log("title lost focus");
         e.preventDefault();
         const filteredPosts = allData.posts.filter(record => record.title === val);
-        console.log("filtered post--> ",...filteredPosts);
         setPostData(...filteredPosts);
     }
 
