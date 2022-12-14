@@ -3,7 +3,6 @@ import postSagaMiddleware from './postSagaMiddleware';
 import { successAction } from './action';
 
 describe('testing sagas - dispatching actions', () => {
-    console.log('testing sagas - dispatching actions----> ');
   
       beforeAll(() => {
          postSagaMiddleware();

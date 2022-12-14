@@ -52,3 +52,7 @@
     margin: 8px 3px;
     outline-color: #3870eb;
 }
+
+.form-container button{
+    background-color: #8add7f;
+}

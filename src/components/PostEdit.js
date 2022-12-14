@@ -37,7 +37,7 @@ const PostEdit = ({post,showForm, allData}) => {
                         <div className='form-container'>
                             <div>
                                 <input type="text" placeholder="Post title" onChange={(e)=>setPostData({...postData,title: e.target.value})} value={postData.title} />
-                                <button style={{height: "30px"}} onClick={ (e) => titleLostFocus(e,postData.title)}>Get data</button>
+                                <button style={{height: "30px"}} onClick={ (e) => titleLostFocus(e,postData.title)}>Search Post</button>
                             </div>
                             <textarea placeholder='Post content'  onChange={(e)=>setPostData({...postData,body: e.target.value})} value={postData.body}></textarea>
                             <div>

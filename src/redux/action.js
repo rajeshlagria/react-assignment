@@ -31,6 +31,6 @@ export const successAction = (data) => {
 export const failureAction = (error) => {
     return { 
         type: FAILURE, 
-        payload: {error, error: true} 
+        payload: {error, err: true} 
     }
 };

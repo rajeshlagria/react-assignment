@@ -17,12 +17,7 @@ const Posts = () => {
         dispatch(postList());
     }, [])
 
-    useEffect(() => {
-        console.log("Side effects occor--> ");
-    }, [postData])
-
     const postDataEvent = (val)=>{
-        console.log("Modify click---> ",val);
         setModifyData(val);
         setShowUpdateForm(true);
     }
