@@ -54,7 +54,7 @@ const postRoutes = (app, fs) => {
     //get api (searching via title)
     app.get('/searchpost', (req, res)=>{
         readFile((data) => {
-            const filter = req.query?.title;
+            const filter = req.query.title;
             
             const posts = data.posts.filter(record => record.title.includes(filter));
             res.send({posts});
@@ -67,7 +67,7 @@ const postRoutes = (app, fs) => {
         readFile((data) => {
             const postId = req.params['id'];
             console.log("Body ---> ",req.body);
-            let newData = data?.posts.map((val)=>{
+            let newData = data.posts.map((val)=>{
                 if(val.id == postId){
                     val = req.body;
                 }
