@@ -4,7 +4,6 @@ const defaultData = {};
 export const postData = (data = [], action) => {
     switch (action.type) {
         case GET_ALL_POST:
-            console.warn("all post-->> ", action.data);
             defaultData['data'] = action.data;
             return action.data;
 
@@ -16,7 +15,6 @@ export const postData = (data = [], action) => {
                 return val;
             })
             defaultData.data["posts"] = newData;
-            console.warn("modified post-->> ", defaultData.data);
             return defaultData.data;
 
         case SEARCH_POST:
