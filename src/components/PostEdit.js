@@ -27,26 +27,13 @@ const PostEdit = ({post,showForm, allData}) => {
         showForm(false);
     }
 
-    const titleLostFocus = (e, val)=>{
-        e.preventDefault();
-        if(val.toString().trim()===""){
-            alert("Enter the title first !");
-            return;
-        }
-        const filteredPosts = allData.posts.filter(record => record.title === val);
-        setPostData(...filteredPosts);
-    }
-
     return (
         <div className='back-drop'>
                 <div className='edit-form'>
                     <h3>Edit Post</h3> 
                     <form>
                         <div className='form-container'>
-                            <div>
-                                <input type="text" placeholder="Post title" onChange={(e)=>setPostData({...postData,title: e.target.value})} value={postData.title} />
-                                <button style={{height: "30px"}} onClick={ (e) => titleLostFocus(e,postData.title)}>Search Post</button>
-                            </div>
+                            <input type="text" placeholder="Post title" onChange={(e)=>setPostData({...postData,title: e.target.value})} value={postData.title} />
                             <textarea placeholder='Post content'  onChange={(e)=>setPostData({...postData,body: e.target.value})} value={postData.body}></textarea>
                             <div>
                                 <input type="submit" value="Update" onClick={(e)=>updateClick(e)} />
